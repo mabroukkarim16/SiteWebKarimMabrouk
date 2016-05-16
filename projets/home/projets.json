@@ -5,20 +5,20 @@
             "dir":"fierbase"            
             },
             {
-            "nom":"GitHub",
+            "nom":"GitHub",            
             "dir":"github",  
             "description":"Mon projet de site web publié sur GitHub"
             },   
             {
             "nom":"Langues",
-            "dir":"Langues",  
+            "dir":"langues",  
             "description":"Pratique de l'utilisation des sélecteurs et la mise en page avec CSS3",
             "sujets":["CSS3","HTML5","Sélecteurs"]
             },
 
             {
             "nom":"Pens",
-            "dir":"Pens", 
+            "dir":"pens", 
             "description":"Exercices que j'ai faits sur CodePen"
             },
 
