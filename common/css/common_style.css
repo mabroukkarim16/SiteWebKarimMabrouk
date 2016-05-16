@@ -1,0 +1,27 @@
+
+a:link {
+    color: cyan;
+}
+
+/* visited link */
+a:visited {
+    color: limegreen;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+    text-shadow: 100px 0px yellow ;
+   
+    
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+a{
+    transition: 2s;
+  }
+

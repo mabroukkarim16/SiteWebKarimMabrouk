@@ -1,0 +1,59 @@
+        [  
+            
+              {
+            "nom":"Firebase Chat",
+            "dir":"fierbase"            
+            },
+            {
+            "nom":"GitHub",
+            "dir":"github",  
+            "description":"Mon projet de site web publié sur GitHub"
+            },   
+            {
+            "nom":"Langues",
+            "dir":"Langues",  
+            "description":"Pratique de l'utilisation des sélecteurs et la mise en page avec CSS3",
+            "sujets":["CSS3","HTML5","Sélecteurs"]
+            },
+
+            {
+            "nom":"Pens",
+            "dir":"Pens", 
+            "description":"Exercices que j'ai faits sur CodePen"
+            },
+
+            {
+            "nom":"Todo",
+            "dir":"todo",
+            "description":"Pratique de javaScript avancé en ajoutant des evennements sur des objets créer et le sauvegarde  dans localStorge sous format JSON", 
+            "sujets":["CSS3","HTML5","JSON","div editable", "KeyEvent"]
+            },
+
+            {
+            "nom":"Todo",
+            "skinType":"Classique",
+            "dir":"todo",  
+            "querySkin":"redonblack"
+            },
+
+            {
+            "nom":"Todo",
+            "skinType":"Orange",
+            "dir":"todo",  
+            "querySkin":"blue-on-orange"  
+            },
+            {
+            "nom":"Todo",
+            "skinType":"Cream",
+            "dir":"todo",
+            "querySkin":"orangeOnCream"
+            },
+            {
+            "nom":"Tutoriel JS",
+            "dir":"TutorielJS"            
+            },
+            {
+            "nom":"YouTube",
+            "dir":"youtube"              
+            }            
+            ]

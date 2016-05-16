@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">    
+    <link rel="stylesheet" href="./style.css">
+     <script src="../../common/js/favicon.js"></script>	
+     <script src="../../common/js/handlebars-v4.0.5.js"></script>	
+    <script   src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <title>home</title>
+</head>
+
+<body>  
+   <div  id="container">
+       
+    <label id="checkbox">
+        <input type="checkbox" name="checkbox"  value="">Sourdine</label>
+    
+ <div id="nom"> <h1>Karim Mabrouk</h1></div> 
+       
+    <h2>  <img id="Monimage" src="./monImage.png" alt="Mon image"> </h2>      
+		
+    <h3><span> Bienvenue sur mon site web!</span></h3>
+		
+    <p><audio id="idAudio" src="./messageBienvenu.mp3"></audio> </p>         
+        
+    <p>
+		Je vous invite à visiter. les rubriques disponibles, en ordre alphabétique, sont les suivantes:		
+    </p>
+		<ul id="ulMenu"></ul>
+    <script id="templateScripte" type="text/x-handlerbars-template">
+    {{#each projets}}             
+        {{#if querySkin }}
+              {{#if skinType }}  
+                 <li><a href='../{{dir}}/index.html?skin={{querySkin}}'>{{nom}}(<span id="{{skinType}}">{{skinType}})</span></a><br/>
+              {{else}}
+                 <li><a href='../{{dir}}/index.html?skin={{querySkin}}'>{{nom}}</a><br/>
+              {{/if}} 
+         {{else}}
+              <li><a href='../{{dir}}/index.html'>{{nom}}</a><br/>
+          {{/if}}             
+        {{#if description }}
+           <div> {{description}}
+              {{#if sujets }}
+                 <div id="listName"><br/>Sujets: 
+                    {{#each sujets}}
+                        <span class="sujets"> {{this}} </span>
+                     {{/each}}
+                 </div>
+              {{/if}}     
+          </div>   
+        {{/if}}          
+    </li>
+{{/each}}
+    </script>	
+       </div>     
+ <script src="../home/scripts/script.js"></script>	   
+</body>
+</html>

@@ -1,0 +1,83 @@
+@import "../../common/css/common_style.css";
+@keyframes animationBoxShadow {
+    0%  { box-shadow: 0px 0px 10px 5px  red ;}
+    25%  {box-shadow: 0px 0px 10px 5px  #ff3333 ;}
+    50%  {box-shadow: 0px 0px 10px 5px #ff4d4d ;}
+    75%  {box-shadow: 0px 0px 10px 5px  #ff9999 }
+    100% {box-shadow: 0px 0px 10px 5px  red;}
+}
+
+iframe
+{
+	height: 900px;
+	width: 99%;
+    border: 0px;
+}
+
+#retour
+{
+    display: flex;
+   // flex-wrap: wrap;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right:0;
+    width: 200px; 
+    box-shadow: 0px 0px 25px  #F0F0F0 inset;  
+    padding:20px;   
+    border-radius: 0 0 0 30px ;
+    margin:auto; 
+    text-align:center;
+	//font-size: 1.6em;
+	font-weight: bold;	
+    background:radial-gradient( #F0F0F0, transparent );
+    opacity:0.8;
+    z-index: 1;	
+     -webkit-transition:1s ;
+     -moz-transition: 1s ;
+     transition: 1s ; 
+}
+#retour >button
+{
+ flex: 1; 
+ font-size: 1.1em;
+}    
+#retour >a
+{
+ flex: 1; 
+ font-size: 1.6em;
+}   
+
+#frame
+{
+    margin:10px ;	
+    padding: 10px;
+    height: 40%;
+    border-radius:30px ;
+	min-width: 90%; 
+    min-height: 1000px;
+	border: 3px solid red;
+	background: black;		
+    color:yellow;      
+    animation-name: animationBoxShadow;
+    animation-duration: 4s; 
+    animation-iteration-count: infinite;
+	  
+}
+
+body{
+     margin:20px ;
+    background: black;		
+    color:yellow;
+}
+
+h1{
+   margin:20px;
+   font-weight: bold;
+   font-family: Arial, Helvetica, sans-serif; 
+   font-size: 2em;
+}
+#retour:hover{
+     opacity: 1;
+   
+}

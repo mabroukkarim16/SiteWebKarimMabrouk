@@ -1,0 +1,929 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import "../../common/css/common_style.css";
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import "../../common/css/common_style.css";
+:root * {
+  box-sizing: border-box;
+}
+:root body {
+  background: black;
+  padding: 30px;
+  transition: 2s ;
+}
+:root #container {
+  margin: auto;
+  -moz-display: flex;
+  -webkit-display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+  -moz-justify-content: center;
+  max-width: 95%;
+  border: 2px solid red;
+  border-radius: 20px;
+  padding: 25px;
+}
+:root .hide-on-small-screen {
+  font-size: 1.3em;
+  color: #990000;
+  font-weight: bold;
+  opacity: 1;
+  transition: 2s;
+}
+@media (max-width: 360px) {
+  :root .hide-on-small-screen {
+    font-size: 0px;
+  }
+}
+:root header {
+  display: flex;
+  margin-bottom: 30px;
+}
+:root #todolist,
+:root #donelist {
+  font-size: 1.4em;
+  color: white;
+  padding: 0px;
+  margin: 0px;
+}
+:root #donelist article div {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+:root #todolist:empty::after {
+  color: lime;
+  content: "Veuillez entrer une nouvelle tâche à faire svp!";
+  opacity: 0.95;
+  margin-left: 10px;
+  font-style: italic;
+}
+:root #boutons {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 100%;
+  background: white;
+  opacity: 0.7;
+  transition: 1s ;
+}
+:root #boutons:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+:root #boutons * {
+  flex: 1;
+  font-size: 1.3em;
+  background: white;
+}
+:root button {
+  color: #00ffff;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  -webkit-mix-blend-mode: difference;
+  -moz-mix-blend-mode: difference;
+  mix-blend-mode: difference;
+  transition: 1s ;
+}
+:root button img {
+  vertical-align: middle;
+  margin: 5px;
+  width: 30px;
+  height: 20px;
+}
+:root button:disabled {
+  display: none;
+}
+:root button:hover {
+  cursor: pointer;
+  color: #00aaff;
+  text-shadow: -7px -7px 20px #00aaff;
+}
+:root #input {
+  border: 0px;
+  padding: 10px;
+  width: 90%;
+  margin-left: 30px;
+  background: red;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 15px red;
+}
+:root #input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: black;
+  font-size: 1.2em;
+  opacity: 0.8;
+  font-weight: bold;
+  opacity: 0.5;
+}
+:root #input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: black;
+  font-size: 1.2em;
+  font-weight: bold;
+  opacity: 0.5;
+}
+:root article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3px;
+  font-size: 1em;
+}
+:root article input {
+  transition: 0.5s;
+}
+:root article input:hover {
+  box-shadow: 0px 0px 40px 10px white;
+}
+:root article input:focus {
+  box-shadow: 0px 0px 40px 10px white;
+}
+:root article img {
+  float: right;
+  width: 20px;
+  height: 20px;
+  transition: 0.5s;
+  border-radius: 100%;
+}
+:root article img:hover {
+  box-shadow: 0px 0px 40px 10px white;
+}
+:root article img:focus {
+  box-shadow: 0px 0px 40px 10px white;
+}
+:root article div {
+  flex: 1;
+  line-height: 80%;
+  transition: 0.5s;
+}
+:root article div:focus {
+  background: white;
+  color: black;
+  font-weight: bold;
+  padding-left: 10px;
+  border-radius: 5px ;
+}
+:root article div:hover {
+  background: #7a7d85;
+  color: white;
+  border-radius: 5px ;
+  padding-left: 10px;
+  border-right: 8px solid white;
+  border-left: 8px solid white;
+}
+:root #retour {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  box-shadow: 0px 0px 25px white inset;
+  padding: 20px;
+  border-radius: 0 0 0 30px ;
+  margin: auto;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  background: radial-gradient(white, transparent);
+  opacity: 0.8;
+  z-index: 1;
+  -webkit-transition: 1s ;
+  -moz-transition: 1s ;
+  transition: 2s ;
+}
+:root #retour:hover {
+  opacity: 1;
+  top: 0px;
+  right: 0px;
+  background: radial-gradient(white, transparent);
+}
+:root #retour .skinTitel {
+  color: #990000;
+  font-weight: bold;
+}
+:root #retour #selectSkin {
+  font-weight: bold;
+  font-size: 0.6em;
+}
+:root h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.8em;
+  color: #990000;
+}
+@media (max-height: 480px) {
+  :root #retour {
+    top: -50px;
+    right: -200px;
+    background: lime;
+  }
+  :root body {
+    margin-top: -150px;
+  }
+}
+:root.blue-on-orange * {
+  box-sizing: border-box;
+}
+:root.blue-on-orange body {
+  background: #FFAA00;
+  padding: 30px;
+  transition: 2s ;
+}
+:root.blue-on-orange #container {
+  margin: auto;
+  -moz-display: flex;
+  -webkit-display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+  -moz-justify-content: center;
+  max-width: 95%;
+  border: 2px solid blue;
+  border-radius: 20px;
+  padding: 25px;
+}
+:root.blue-on-orange .hide-on-small-screen {
+  font-size: 1.3em;
+  color: #000099;
+  font-weight: bold;
+  opacity: 1;
+  transition: 2s;
+}
+@media (max-width: 360px) {
+  :root.blue-on-orange .hide-on-small-screen {
+    font-size: 0px;
+  }
+}
+:root.blue-on-orange header {
+  display: flex;
+  margin-bottom: 30px;
+}
+:root.blue-on-orange #todolist,
+:root.blue-on-orange #donelist {
+  font-size: 1.4em;
+  color: black;
+  padding: 0px;
+  margin: 0px;
+}
+:root.blue-on-orange #donelist article div {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+:root.blue-on-orange #todolist:empty::after {
+  color: red;
+  content: "Veuillez entrer une nouvelle tâche à faire svp!";
+  opacity: 0.95;
+  margin-left: 10px;
+  font-style: italic;
+}
+:root.blue-on-orange #boutons {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 100%;
+  background: black;
+  opacity: 0.7;
+  transition: 1s ;
+}
+:root.blue-on-orange #boutons:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+:root.blue-on-orange #boutons * {
+  flex: 1;
+  font-size: 1.3em;
+  background: black;
+}
+:root.blue-on-orange button {
+  color: #0000ff;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  -webkit-mix-blend-mode: difference;
+  -moz-mix-blend-mode: difference;
+  mix-blend-mode: difference;
+  transition: 1s ;
+}
+:root.blue-on-orange button img {
+  vertical-align: middle;
+  margin: 5px;
+  width: 30px;
+  height: 20px;
+}
+:root.blue-on-orange button:disabled {
+  display: none;
+}
+:root.blue-on-orange button:hover {
+  cursor: pointer;
+  color: #5500ff;
+  text-shadow: -7px -7px 20px #5500ff;
+}
+:root.blue-on-orange #input {
+  border: 0px;
+  padding: 10px;
+  width: 90%;
+  margin-left: 30px;
+  background: blue;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 15px blue;
+}
+:root.blue-on-orange #input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #FFAA00;
+  font-size: 1.2em;
+  opacity: 0.8;
+  font-weight: bold;
+  opacity: 0.5;
+}
+:root.blue-on-orange #input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #FFAA00;
+  font-size: 1.2em;
+  font-weight: bold;
+  opacity: 0.5;
+}
+:root.blue-on-orange article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3px;
+  font-size: 1em;
+}
+:root.blue-on-orange article input {
+  transition: 0.5s;
+}
+:root.blue-on-orange article input:hover {
+  box-shadow: 0px 0px 40px 10px black;
+}
+:root.blue-on-orange article input:focus {
+  box-shadow: 0px 0px 40px 10px black;
+}
+:root.blue-on-orange article img {
+  float: right;
+  width: 20px;
+  height: 20px;
+  transition: 0.5s;
+  border-radius: 100%;
+}
+:root.blue-on-orange article img:hover {
+  box-shadow: 0px 0px 40px 10px black;
+}
+:root.blue-on-orange article img:focus {
+  box-shadow: 0px 0px 40px 10px black;
+}
+:root.blue-on-orange article div {
+  flex: 1;
+  line-height: 80%;
+  transition: 0.5s;
+}
+:root.blue-on-orange article div:focus {
+  background: black;
+  color: #FFAA00;
+  font-weight: bold;
+  padding-left: 10px;
+  border-radius: 5px ;
+}
+:root.blue-on-orange article div:hover {
+  background: #7a7d85;
+  color: black;
+  border-radius: 5px ;
+  padding-left: 10px;
+  border-right: 8px solid black;
+  border-left: 8px solid black;
+}
+:root.blue-on-orange #retour {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  box-shadow: 0px 0px 25px black inset;
+  padding: 20px;
+  border-radius: 0 0 0 30px ;
+  margin: auto;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  background: radial-gradient(black, transparent);
+  opacity: 0.8;
+  z-index: 1;
+  -webkit-transition: 1s ;
+  -moz-transition: 1s ;
+  transition: 2s ;
+}
+:root.blue-on-orange #retour:hover {
+  opacity: 1;
+  top: 0px;
+  right: 0px;
+  background: radial-gradient(black, transparent);
+}
+:root.blue-on-orange #retour .skinTitel {
+  color: #000099;
+  font-weight: bold;
+}
+:root.blue-on-orange #retour #selectSkin {
+  font-weight: bold;
+  font-size: 0.6em;
+}
+:root.blue-on-orange h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.8em;
+  color: #000099;
+}
+@media (max-height: 480px) {
+  :root.blue-on-orange #retour {
+    top: -50px;
+    right: -200px;
+    background: red;
+  }
+  :root.blue-on-orange body {
+    margin-top: -150px;
+  }
+}
+:root.orangeOnCream * {
+  box-sizing: border-box;
+}
+:root.orangeOnCream body {
+  background: #DDCFB4;
+  padding: 30px;
+  transition: 2s ;
+}
+:root.orangeOnCream #container {
+  margin: auto;
+  -moz-display: flex;
+  -webkit-display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+  -moz-justify-content: center;
+  max-width: 95%;
+  border: 2px solid #994d00;
+  border-radius: 20px;
+  padding: 25px;
+}
+:root.orangeOnCream .hide-on-small-screen {
+  font-size: 1.3em;
+  color: #331a00;
+  font-weight: bold;
+  opacity: 1;
+  transition: 2s;
+}
+@media (max-width: 360px) {
+  :root.orangeOnCream .hide-on-small-screen {
+    font-size: 0px;
+  }
+}
+:root.orangeOnCream header {
+  display: flex;
+  margin-bottom: 30px;
+}
+:root.orangeOnCream #todolist,
+:root.orangeOnCream #donelist {
+  font-size: 1.4em;
+  color: black;
+  padding: 0px;
+  margin: 0px;
+}
+:root.orangeOnCream #donelist article div {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+:root.orangeOnCream #todolist:empty::after {
+  color: blue;
+  content: "Veuillez entrer une nouvelle tâche à faire svp!";
+  opacity: 0.95;
+  margin-left: 10px;
+  font-style: italic;
+}
+:root.orangeOnCream #boutons {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 100%;
+  background: black;
+  opacity: 0.7;
+  transition: 1s ;
+}
+:root.orangeOnCream #boutons:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+:root.orangeOnCream #boutons * {
+  flex: 1;
+  font-size: 1.3em;
+  background: black;
+}
+:root.orangeOnCream button {
+  color: #994d00;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  -webkit-mix-blend-mode: difference;
+  -moz-mix-blend-mode: difference;
+  mix-blend-mode: difference;
+  transition: 1s ;
+}
+:root.orangeOnCream button img {
+  vertical-align: middle;
+  margin: 5px;
+  width: 30px;
+  height: 20px;
+}
+:root.orangeOnCream button:disabled {
+  display: none;
+}
+:root.orangeOnCream button:hover {
+  cursor: pointer;
+  color: #998000;
+  text-shadow: -7px -7px 20px #998000;
+}
+:root.orangeOnCream #input {
+  border: 0px;
+  padding: 10px;
+  width: 90%;
+  margin-left: 30px;
+  background: #994d00;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 15px #994d00;
+}
+:root.orangeOnCream #input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #DDCFB4;
+  font-size: 1.2em;
+  opacity: 0.8;
+  font-weight: bold;
+  opacity: 0.5;
+}
+:root.orangeOnCream #input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #DDCFB4;
+  font-size: 1.2em;
+  font-weight: bold;
+  opacity: 0.5;
+}
+:root.orangeOnCream article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3px;
+  font-size: 1em;
+}
+:root.orangeOnCream article input {
+  transition: 0.5s;
+}
+:root.orangeOnCream article input:hover {
+  box-shadow: 0px 0px 40px 10px black;
+}
+:root.orangeOnCream article input:focus {
+  box-shadow: 0px 0px 40px 10px black;
+}
+:root.orangeOnCream article img {
+  float: right;
+  width: 20px;
+  height: 20px;
+  transition: 0.5s;
+  border-radius: 100%;
+}
+:root.orangeOnCream article img:hover {
+  box-shadow: 0px 0px 40px 10px black;
+}
+:root.orangeOnCream article img:focus {
+  box-shadow: 0px 0px 40px 10px black;
+}
+:root.orangeOnCream article div {
+  flex: 1;
+  line-height: 80%;
+  transition: 0.5s;
+}
+:root.orangeOnCream article div:focus {
+  background: black;
+  color: #DDCFB4;
+  font-weight: bold;
+  padding-left: 10px;
+  border-radius: 5px ;
+}
+:root.orangeOnCream article div:hover {
+  background: #7a7d85;
+  color: black;
+  border-radius: 5px ;
+  padding-left: 10px;
+  border-right: 8px solid black;
+  border-left: 8px solid black;
+}
+:root.orangeOnCream #retour {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  box-shadow: 0px 0px 25px black inset;
+  padding: 20px;
+  border-radius: 0 0 0 30px ;
+  margin: auto;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  background: radial-gradient(black, transparent);
+  opacity: 0.8;
+  z-index: 1;
+  -webkit-transition: 1s ;
+  -moz-transition: 1s ;
+  transition: 2s ;
+}
+:root.orangeOnCream #retour:hover {
+  opacity: 1;
+  top: 0px;
+  right: 0px;
+  background: radial-gradient(black, transparent);
+}
+:root.orangeOnCream #retour .skinTitel {
+  color: #331a00;
+  font-weight: bold;
+}
+:root.orangeOnCream #retour #selectSkin {
+  font-weight: bold;
+  font-size: 0.6em;
+}
+:root.orangeOnCream h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.8em;
+  color: #331a00;
+}
+@media (max-height: 480px) {
+  :root.orangeOnCream #retour {
+    top: -50px;
+    right: -200px;
+    background: blue;
+  }
+  :root.orangeOnCream body {
+    margin-top: -150px;
+  }
+}
+/*
+    @main-color:red;
+    @background-color:black;
+    @highlight-color: white;    
+    @flash-color:lime;
+
+*{ box-sizing: border-box; }
+
+body 
+ {
+   background:@background-color;
+   padding: 30px;
+   transition: 2s ;
+ }
+
+#container
+     {
+      margin:auto; 
+      -moz-display: flex;
+      -webkit-display: flex;
+      -webkit-flex-wrap: wrap; 
+      -moz-flex-wrap: wrap;
+      position:relative;
+      justify-content:center;
+      -moz-justify-content:center; 
+      max-width:95%;
+      border: 2px solid @main-color;  	
+      border-radius: 20px; 
+      padding: 25px;  
+     }
+
+.hide-on-small-screen {  
+     font-size:1.3em; 
+     color:darken(@main-color, 20%);  
+     font-weight: bold;
+     opacity: 1;
+     transition: 2s;
+    }
+
+@media (max-width: 360px) {
+  .hide-on-small-screen {
+       font-size: 0px;
+       }
+     }
+header{
+       display: flex;
+       margin-bottom:30px;
+      }
+#todolist, #donelist{
+    font-size: 1.4em;
+    color: @highlight-color;
+    padding: 0px;
+    margin: 0px;
+ }
+
+#donelist 
+  {
+  article{
+       div{
+          opacity: 0.7;
+          text-decoration: line-through;  
+           }
+         } 
+ }
+
+#todolist{
+    &:empty{    
+      &::after {
+            color: @flash-color;    
+            content: "Veuillez entrer une nouvelle tâche à faire svp!" ;
+            opacity:0.95;
+            margin-left: 10px;
+            font-style: italic;
+        }
+    }
+ }
+
+#boutons{
+        position: fixed;
+        bottom: 0px;
+        left:0px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;    
+        width: 100%; 
+        background: @highlight-color; 
+        opacity: 0.7;
+        transition: 1s ;
+     &:hover{
+            opacity: 1; 
+            cursor: pointer; 
+            }
+           *{
+            flex:1;      
+            font-size: 1.3em;     
+            background: @highlight-color;   
+            }
+  }
+
+button{
+        color: difference(@main-color, @highlight-color);
+        justify-content: center;
+        align-items: center; 
+        height: 100px;
+       -webkit-mix-blend-mode: difference;
+       -moz-mix-blend-mode: difference;
+        mix-blend-mode: difference;
+        transition: 1s ;
+     img{
+         vertical-align: middle;
+         margin: 5px;  
+         width: 30px;
+         height: 20px;    
+         }
+     &:disabled{
+         display: none;   
+        }
+     &:hover
+        {
+        cursor: pointer; 
+        color:difference(spin(@main-color,20), @highlight-color);   
+        text-shadow: -7px -7px 20px difference(spin(@main-color, 20), @highlight-color); 
+        }
+  }
+
+#input{
+    border: 0px;
+    padding: 10px;
+    width: 90%;
+    margin-left:30px;  
+    background: @main-color;
+    border-radius: 20px;  
+    box-shadow: 0px 0px 20px 15px @main-color;
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+/*      color: @background-color;
+        font-size: 1.2em;
+        opacity: 0.8;
+        font-weight: bold;	
+        opacity:0.5;
+        }
+   &::-moz-placeholder { /* Firefox 19+ */
+/* color: @background-color;
+        font-size: 1.2em;
+        font-weight: bold;	
+        opacity:0.5;
+       } 
+ }
+
+article{
+     display:flex;
+     flex-direction: row;
+     justify-content: space-between;
+     padding: 3px;
+     font-size: 1em;
+     input
+       {
+        transition: 0.5s; 
+        &:hover{
+               box-shadow: 0px 0px 40px 10px  @highlight-color;   
+               }
+        &:focus{
+              box-shadow: 0px 0px 40px 10px  @highlight-color;   
+               }
+        }
+      img{
+          float:right;
+          width: 20px;
+          height: 20px;
+          transition: 0.5s;
+          border-radius: 100%; 
+          &:hover{
+                 box-shadow: 0px 0px 40px 10px  @highlight-color;   
+                 }
+          &:focus{
+                 box-shadow: 0px 0px 40px 10px  @highlight-color;   
+                 }
+         }
+      div   
+        {
+         flex: 1;  
+         line-height: 80%; 
+         transition: 0.5s;
+         &:focus{ 
+                background:  @highlight-color;
+                color: @background-color;
+                font-weight: bold;   
+                padding-left: 10px;
+                border-radius: 5px ;
+                 } 
+         &:hover{     
+                background: #7a7d85;
+                color:  @highlight-color;
+                border-radius: 5px ;
+                padding-left: 10px;    
+                border-right: 8px solid  @highlight-color;   
+                border-left: 8px solid  @highlight-color
+                }    
+         }
+ }
+
+#retour
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    position: fixed;   
+    top: 0;
+    right:0;
+    width: 200px; 
+    height: 80px;
+    box-shadow: 0px 0px 25px @highlight-color inset;  
+    padding-left:3px; 
+    padding-right:3px;  
+    border-radius: 0 0 0 30px ;
+    //margin:auto; 
+    text-align:center;
+	font-size: 1.3em;
+	font-weight: bold;	
+    background:radial-gradient(@highlight-color, transparent );
+    opacity:0.8;
+    z-index: 1;	
+    -webkit-transition:1s ;
+    -moz-transition: 1s ;
+    transition: 2s ; 
+ &:hover{
+     opacity: 1;
+     top: 0px;
+     right:0px;
+     background:radial-gradient( @highlight-color, transparent );
+     } 
+}
+
+h1{  
+    font-family: 'Pacifico', cursive;  
+    font-size: 2.8em; 
+    color:darken(@main-color, 20%) ; 
+   }
+.skinTitel{  
+     font-size:0.8em; 
+     color: darken(@main-color, 20%);  
+     font-weight: bold;
+     opacity: 1;
+     transition: 2s;
+   }
+
+
+
+@media (max-height: 480px) {
+  #retour{   
+          top: -30px;
+          right:-200px;
+          background: @flash-color;
+          }    
+     body{
+          margin-top: -150px;    
+          }
+ }*/

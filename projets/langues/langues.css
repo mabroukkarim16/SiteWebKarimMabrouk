@@ -1,0 +1,257 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import "../../common/css/common_style.css";
+
+body 
+{
+    margin:auto;	
+	width: 90%; 	
+	background: black;		
+    color:yellow;
+    counter-reset:section;
+}
+
+h1{
+	font-family: 'Pacifico', cursive;	
+	color: red;
+    font-weight: bold;
+    font-size: 200%;
+}
+
+
+footer {
+	text-align:center;
+}
+#nombres >p{	
+	color: magenta;
+	font-family: 'Pacifico', cursive;
+	text-indent:150px;
+	font-size: 150%;
+	line-height: 0;
+	font-weight: bold;
+}
+ol{
+    text-align: center;
+    padding-left: 40%;
+}
+
+article
+ { 
+  display: block;
+  background: hsl(120, 100%, 30%); 
+  min-width:300px; 
+  min-height: 350px;
+  padding:30px; 
+  flex: 1;
+  margin:5px; 
+  text-align:center; 
+  position:relative;
+  }
+
+
+article::before
+ {
+  font-weight: bold;
+  counter-increment:section;
+  content:counter(section);
+  color:yellow;
+  font-size: 2.3em; 
+  }
+main{
+display: flex; 
+flex-wrap: wrap;
+padding:5px;	
+
+}
+main  >:nth-child(1)
+{
+ background: linear-gradient(to bottom,  hsl(0, 100%, 35%), hsl(0, 90%, 75%)); 
+ box-shadow: 0px 0px 20px  #fff inset;  
+ order: 1;
+ border-radius: 20px;
+}
+
+main >:nth-child(2)
+{
+  background: linear-gradient(to bottom, hsl(120, 100%, 25%), lime); 
+  box-shadow: 0px 0px 15px  LIME inset;  
+  order: 2;
+  border-radius: 20px;
+}
+main > :nth-child(3)
+{
+  background:linear-gradient(to bottom,  hsl(0, 100%, 35%), hsl(0, 90%, 75%)); 
+  box-shadow: 0px 0px 15px  #fff inset;  
+  order: 4;
+  border-radius: 20px;
+}
+main >:nth-child(4)
+{
+ background: linear-gradient(to bottom, hsl(120, 100%, 25%), lime);  
+ order: 5;
+ box-shadow: 0px 0px 15px  LIME inset;  
+ border-radius: 20px;
+}
+main > :nth-child(5)
+{
+ background: rgba(0, 0, 0, 0.3);
+ box-shadow: 0px 0px 15px  #EEE inset;  
+ order: 3;
+ border-radius: 20px;
+}
+main > :nth-child(6)
+{
+ background: linear-gradient(to bottom, hsl(120, 100%, 25%), lime); 
+ order: 6;
+ box-shadow: 0px 0px 15px  LIME inset;  
+ border-radius: 20px;
+}
+main >:nth-child(7)
+{
+  background:linear-gradient(to bottom,  hsl(0, 100%, 35%), hsl(0, 90%, 75%)); 
+  order: 7;
+  box-shadow: 0px 0px 15px #fff  inset; 
+  border-radius: 20px;	   
+}
+main >:nth-child(8)
+{
+   background: rgba(0, 0, 0, 0.3);
+   order: 8;
+   box-shadow: 0px 0px 15px  #fff inset;  
+   border-radius: 20px;
+	
+}
+
+article:nth-child(1) ol> li:nth-child(even),
+article:nth-child(3) ol> li:nth-child(even),
+article:nth-child(7) ol> li:nth-child(even)
+{
+	width:50px;
+	background: #cc6699;
+    text-align: left;
+    padding: 4px;
+}
+
+article:nth-child(1) ol> li:nth-child(odd),
+article:nth-child(3) ol> li:nth-child(odd),
+article:nth-child(7) ol> li:nth-child(odd)
+{
+	width:50px;
+	background:#990000;
+    text-align: left;
+    padding: 4px;
+}
+
+article:nth-child(1) li:first-child,
+article:nth-child(3) li:first-child,
+article:nth-child(7) li:first-child,
+article:nth-child(2) li:first-child,
+article:nth-child(4) li:first-child
+{
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+
+article:nth-child(1) li:last-child,
+article:nth-child(3) li:last-child,
+article:nth-child(7) li:last-child,
+article:nth-child(2) li:last-child,
+article:nth-child(4) li:last-child
+{	
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+}
+
+
+article:nth-child(2) ol> li:nth-child(even),
+article:nth-child(4) ol> li:nth-child(even)
+{
+	width:50px;
+	background: #8ddeb1;
+    text-align: left;
+    padding: 4px;
+}
+
+article:nth-child(2) ol> li:nth-child(odd),
+article:nth-child(4) ol> li:nth-child(odd)
+    {
+        width:50px;
+        background:#31a666;
+         text-align: left;
+          padding: 4px;
+    }
+
+article:nth-child(1) ol,
+article:nth-child(2) ol,
+article:nth-child(3) ol,
+article:nth-child(4) ol,
+article:nth-child(7) ol
+    {
+     color: black;
+    }
+
+article:nth-child(5) ol
+    {	 color: blue;
+    }
+
+article:nth-child(8) ol
+    {
+         width:170px;
+    }
+article:nth-child(8)> ol li> div> span:nth-child(3)
+    {
+     float:right;
+     width:4px;
+    }
+
+article:nth-child(8)>  ol li> div> span:nth-child(2)
+    { 
+      width:30px;
+      color:white;
+    }
+article:nth-child(8)>  ol li> div> span:nth-child(1)
+    {
+      float:left; 
+      text-align:left;
+      width:90px;
+      color:orange;
+    }
+article:nth-child(8)>ol
+    {
+    color:blue;
+    }
+
+article:nth-child(6) ol
+    {
+      width:150px;
+    }
+article:nth-child(6)> ol li> span
+ {
+  float:right; 
+  text-align:right;
+  width:60px;
+  color:orange;
+  }
+article:nth-child(6)> ol>li
+    {
+    color:black;
+    text-align: left;
+    }
+
+article >  ol> li::first-letter
+    {
+        text-transform : uppercase;  
+    }
+article:nth-child(5) ol> li
+    {
+     text-align: left;
+    }
+
+
+
+
+
+
+
+
+
+

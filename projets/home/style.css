@@ -1,0 +1,211 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import "../../common/css/common_style.css";
+@keyframes animationBoxShadow {
+    0%  { box-shadow: 0px 0px 10px 5px  red ;}
+    25%  {box-shadow: 0px 0px 10px 5px  #ff3333 ;}
+    50%  {box-shadow: 0px 0px 10px 5px #ff4d4d ;}
+    75%  {box-shadow: 0px 0px 10px 5px  #ff9999 }
+    100% {box-shadow: 0px 0px 10px 5px  red;}
+}
+*{
+    box-sizing: border-box;
+ }
+
+
+body 
+{
+ margin:auto;  
+ width: 100%; 
+ background: black;
+ padding: 30px;
+   
+}
+
+@media (max-width: 570px) {
+    #container{
+      padding-top:50px;
+       }
+
+}
+
+#checkbox
+{
+    width: 150px;
+    height: 40px;  
+    padding:5px;   
+    border-radius: 0 20px 0 20px;
+    border-color:red;
+    border-style: solid;
+    border-width: 3px;
+    margin:auto; 
+    text-align:center;
+	font-size: 1.2em;
+    opacity: 1;
+    z-index: 1;	
+    background:black;
+    transition: 1s ;
+     -webkit-transition: 1s ;;
+     -moz-transition: 1s ; 
+    
+}
+
+
+#checkbox:hover
+{
+  cursor:  pointer; 
+  opacity: 1; 
+background:#333;
+}
+
+[type=checkbox]:after {
+    content: attr(titre1);
+    margin: -3px 15px;
+    vertical-align: top;
+    white-space:nowrap;
+    display: inline-block;
+   
+    
+}
+
+#container
+ {
+    margin:auto; 
+      -moz-display: flex;
+   -webkit-display: flex;
+  -webkit-flex-wrap: wrap; 
+   -moz-flex-wrap: wrap;
+    position:relative;
+  justify-content:center;
+   -moz-justify-content:center; 
+  max-width:650px;
+  border: 2px solid red;
+  background: black;	
+  border-radius: 20px;
+  color:yellow;
+    padding: 25px; 
+     
+  animation-name: animationBoxShadow;
+  animation-duration: 4s; 
+  animation-iteration-count: infinite;
+     
+ }
+h2
+{
+  font-family: 'Pacifico', cursive; 
+  text-align: center;
+  color: cyan;
+  font-weight: bold;
+  font-size: 200%;
+}
+h3
+{
+  font-family: 'Pacifico', cursive; 
+  text-align: center;
+  color: firebrick; 
+  font-size: 150%;
+  text-decoration: underline;   
+}
+
+h1
+{  
+  margin: 0;
+  padding: 0;
+  font-family: 'Pacifico', cursive;   
+  font-size: 200%;
+  background: black; 
+  color: white; 
+   mix-blend-mode: multiply;
+   -moz-mix-blend-mode: multiply;
+}
+p
+{
+  text-indent:50px; 
+  font-family: Arial, Helvetica,sans-serif; 
+  margin-left:20px;
+  color:yellow;
+}
+li{ 
+  font-size: 120%;
+  position: relative;
+}
+
+li >div
+{
+    font-size: 90%;
+    background: black;
+    border: solid red 2px;
+    border-radius: 10%;
+    min-width: 100px;
+    opacity:0;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: -10px;
+    transform:scale(0.4);
+    width: 35%;
+    z-index: 2;
+}
+
+li:hover div
+{
+    opacity:1;
+    transition: 1s;
+    transform: scale(1);
+
+}
+
+li:hover #listName
+{
+  color: red;   
+}
+li:hover .sujets:nth-child(even)
+{
+  color: blue ;   
+}
+
+li:hover .sujets:nth-child(odd)
+{
+  color:cyan;   
+}
+
+
+h3 >span
+{
+   color: magenta;  
+}
+
+#Monimage{
+    text-align: center;
+    width: 60%;
+    height: 300px;
+    border : solid white 5px;   
+    transform: rotate(2deg);
+    border-radius: 20px;
+    -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+	-moz-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+
+#nom
+{ 
+    display: block;
+    position: relative;
+    margin: 10px;
+    padding: 0;       
+    background: -moz-linear-gradient(to right, red, yellow,red, yellow,red, red, yellow,red, yellow,red); 
+     background: linear-gradient(to right, red, yellow,red, yellow,red, red, yellow,red, yellow,red); 
+    text-align: center;  
+    
+}
+ #Classique{
+  color: red;  
+     
+}   
+#Orange{
+color: orange;      
+     
+} 
+#Cream{
+    
+ color: hsl(30, 100%, 85%);      
+} 

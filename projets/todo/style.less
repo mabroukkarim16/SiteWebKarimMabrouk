@@ -1,0 +1,278 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import "../../common/css/common_style.css";
+@import "skin";
+:root{
+    .skin;
+   }
+
+
+:root.blue-on-orange{
+     .skin(blue, #FFAA00, black, red);
+}
+   
+:root.orangeOnCream{
+ .skin(#994d00, #DDCFB4, black , blue);
+}
+
+
+
+
+/*
+    @main-color:red;
+    @background-color:black;
+    @highlight-color: white;    
+    @flash-color:lime;
+
+*{ box-sizing: border-box; }
+
+body 
+ {
+   background:@background-color;
+   padding: 30px;
+   transition: 2s ;
+ }
+
+#container
+     {
+      margin:auto; 
+      -moz-display: flex;
+      -webkit-display: flex;
+      -webkit-flex-wrap: wrap; 
+      -moz-flex-wrap: wrap;
+      position:relative;
+      justify-content:center;
+      -moz-justify-content:center; 
+      max-width:95%;
+      border: 2px solid @main-color;  	
+      border-radius: 20px; 
+      padding: 25px;  
+     }
+
+.hide-on-small-screen {  
+     font-size:1.3em; 
+     color:darken(@main-color, 20%);  
+     font-weight: bold;
+     opacity: 1;
+     transition: 2s;
+    }
+
+@media (max-width: 360px) {
+  .hide-on-small-screen {
+       font-size: 0px;
+       }
+     }
+header{
+       display: flex;
+       margin-bottom:30px;
+      }
+#todolist, #donelist{
+    font-size: 1.4em;
+    color: @highlight-color;
+    padding: 0px;
+    margin: 0px;
+ }
+
+#donelist 
+  {
+  article{
+       div{
+          opacity: 0.7;
+          text-decoration: line-through;  
+           }
+         } 
+ }
+
+#todolist{
+    &:empty{    
+      &::after {
+            color: @flash-color;    
+            content: "Veuillez entrer une nouvelle tâche à faire svp!" ;
+            opacity:0.95;
+            margin-left: 10px;
+            font-style: italic;
+        }
+    }
+ }
+
+#boutons{
+        position: fixed;
+        bottom: 0px;
+        left:0px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;    
+        width: 100%; 
+        background: @highlight-color; 
+        opacity: 0.7;
+        transition: 1s ;
+     &:hover{
+            opacity: 1; 
+            cursor: pointer; 
+            }
+           *{
+            flex:1;      
+            font-size: 1.3em;     
+            background: @highlight-color;   
+            }
+  }
+
+button{
+        color: difference(@main-color, @highlight-color);
+        justify-content: center;
+        align-items: center; 
+        height: 100px;
+       -webkit-mix-blend-mode: difference;
+       -moz-mix-blend-mode: difference;
+        mix-blend-mode: difference;
+        transition: 1s ;
+     img{
+         vertical-align: middle;
+         margin: 5px;  
+         width: 30px;
+         height: 20px;    
+         }
+     &:disabled{
+         display: none;   
+        }
+     &:hover
+        {
+        cursor: pointer; 
+        color:difference(spin(@main-color,20), @highlight-color);   
+        text-shadow: -7px -7px 20px difference(spin(@main-color, 20), @highlight-color); 
+        }
+  }
+
+#input{
+    border: 0px;
+    padding: 10px;
+    width: 90%;
+    margin-left:30px;  
+    background: @main-color;
+    border-radius: 20px;  
+    box-shadow: 0px 0px 20px 15px @main-color;
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  /*      color: @background-color;
+        font-size: 1.2em;
+        opacity: 0.8;
+        font-weight: bold;	
+        opacity:0.5;
+        }
+   &::-moz-placeholder { /* Firefox 19+ */
+      /* color: @background-color;
+        font-size: 1.2em;
+        font-weight: bold;	
+        opacity:0.5;
+       } 
+ }
+
+article{
+     display:flex;
+     flex-direction: row;
+     justify-content: space-between;
+     padding: 3px;
+     font-size: 1em;
+     input
+       {
+        transition: 0.5s; 
+        &:hover{
+               box-shadow: 0px 0px 40px 10px  @highlight-color;   
+               }
+        &:focus{
+              box-shadow: 0px 0px 40px 10px  @highlight-color;   
+               }
+        }
+      img{
+          float:right;
+          width: 20px;
+          height: 20px;
+          transition: 0.5s;
+          border-radius: 100%; 
+          &:hover{
+                 box-shadow: 0px 0px 40px 10px  @highlight-color;   
+                 }
+          &:focus{
+                 box-shadow: 0px 0px 40px 10px  @highlight-color;   
+                 }
+         }
+      div   
+        {
+         flex: 1;  
+         line-height: 80%; 
+         transition: 0.5s;
+         &:focus{ 
+                background:  @highlight-color;
+                color: @background-color;
+                font-weight: bold;   
+                padding-left: 10px;
+                border-radius: 5px ;
+                 } 
+         &:hover{     
+                background: #7a7d85;
+                color:  @highlight-color;
+                border-radius: 5px ;
+                padding-left: 10px;    
+                border-right: 8px solid  @highlight-color;   
+                border-left: 8px solid  @highlight-color
+                }    
+         }
+ }
+
+#retour
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    position: fixed;   
+    top: 0;
+    right:0;
+    width: 200px; 
+    height: 80px;
+    box-shadow: 0px 0px 25px @highlight-color inset;  
+    padding-left:3px; 
+    padding-right:3px;  
+    border-radius: 0 0 0 30px ;
+    //margin:auto; 
+    text-align:center;
+	font-size: 1.3em;
+	font-weight: bold;	
+    background:radial-gradient(@highlight-color, transparent );
+    opacity:0.8;
+    z-index: 1;	
+    -webkit-transition:1s ;
+    -moz-transition: 1s ;
+    transition: 2s ; 
+ &:hover{
+     opacity: 1;
+     top: 0px;
+     right:0px;
+     background:radial-gradient( @highlight-color, transparent );
+     } 
+}
+
+h1{  
+    font-family: 'Pacifico', cursive;  
+    font-size: 2.8em; 
+    color:darken(@main-color, 20%) ; 
+   }
+.skinTitel{  
+     font-size:0.8em; 
+     color: darken(@main-color, 20%);  
+     font-weight: bold;
+     opacity: 1;
+     transition: 2s;
+   }
+
+
+
+@media (max-height: 480px) {
+  #retour{   
+          top: -30px;
+          right:-200px;
+          background: @flash-color;
+          }    
+     body{
+          margin-top: -150px;    
+          }
+ }*/

@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat+Alternates); 
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import "../../common/css/common_style.css";
+
+* {
+  box-sizing: border-box;
+  }
+
+
+body 
+{
+    display: flex;
+    flex-direction: column;    
+    margin:0;
+    padding: 0;
+    height: 100vh;
+    background: black;
+    color:yellow;
+ }
+
+header, footer
+{
+    flex:none;
+    display: flex;
+    align-items: center;
+    background: yellow;
+    color: black;
+    padding: 1vh 2vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+main{
+  
+    position: relative;
+    flex: 1;
+    overflow: auto;
+    padding: 10px;
+    font-size: 1.3em;  
+    transition: 1s;
+     min-height: 20px;
+  
+}
+
+@media(max-height: 300px) {
+  main{  
+  margin-top: -80px;
+  }
+   header 
+   {
+    z-index: 1; 
+   }   
+}
+header >a
+{
+    font-size: 1.3em;
+    float: left;
+    font-weight: bold;
+     
+}
+
+footer >input:nth-child(1)
+{
+    flex: 1;
+}
+footer >input
+{
+    flex: 3;
+    margin: 3px;
+    height: 28px;
+}
+
+
+}
