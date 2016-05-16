@@ -12,13 +12,12 @@
     {
     var oncomplete=function(error){if(error){console.error("Erreur: "+error);}
                                    else{  console.log("Toutes les données ont été effacées.");  } };
-     ref.remove(oncomplete);                        
-        
+     ref.remove(oncomplete);                           
     }
     
-     $('<p>').text(nombreDeMessages+' messages').appendTo($('#messagesDiv'));
-     $('<pre>').text( 'Effacer').appendTo($('#messagesDiv'));
-    
+ $('<p>').text(nombreDeMessages+' messages').appendTo($('#messagesDiv'));
+ $('<pre>').text( 'Effacer').appendTo($('#messagesDiv'));
+
     $(messagesDiv).find('p').css({
                             'color':'lime',
                             'fontStyle':'italic',              
@@ -64,8 +63,7 @@
                              supprimerMessages(myDataRef) ;      
                       })
 
-                   .hover(
-                    function(){ $(this).css({'color':'black',
+                   .hover(function(){ $(this).css({'color':'black',
                                              'background':'red',
                                               'height':'35px', 
                                               'opacity':'1', 
@@ -74,8 +72,7 @@
                                                'cursor':'pointer' });  
                                                             } , 
                     function(){ $(this).css({'color':'red',                                            'background':'black',  
-                                        'opacity':'0' });
-                              }
+                                        'opacity':'0' });}
                          ) ; 
     
       
@@ -120,7 +117,6 @@ function initMesssageNumber(){
          $('p').text(nombreDeMessages+' messages');  
        }
 }
-    
 
 function initUserName() {
    var oldname=localStorage.getItem('userName'); 

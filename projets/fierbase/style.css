@@ -70,4 +70,14 @@ footer >input
 }
 
 
+p:hover pre
+{
+    opacity:1;
+    transition: 1s;
+   // transform: scale(1);
+    transform:translateX(200);
+   right:120px;
+    top:-17px;
+}
+
 }

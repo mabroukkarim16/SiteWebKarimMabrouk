@@ -32,26 +32,26 @@
 		<ul id="ulMenu"></ul>
     <script id="templateScripte" type="text/x-handlerbars-template">
     {{#each projets}}             
-        {{#if querySkin }}
-              {{#if skinType }}  
-                 <li><a href='../{{dir}}/index.html?skin={{querySkin}}'>{{nom}}(<span id="{{skinType}}">{{skinType}})</span></a><br/>
-              {{else}}
-                 <li><a href='../{{dir}}/index.html?skin={{querySkin}}'>{{nom}}</a><br/>
-              {{/if}} 
-         {{else}}
-              <li><a href='../{{dir}}/index.html'>{{nom}}</a><br/>
-          {{/if}}             
-        {{#if description }}
-           <div> {{description}}
-              {{#if sujets }}
-                 <div id="listName"><br/>Sujets: 
-                    {{#each sujets}}
-                        <span class="sujets"> {{this}} </span>
-                     {{/each}}
-                 </div>
-              {{/if}}     
-          </div>   
-        {{/if}}          
+            {{#if querySkin }}
+                  {{#if skinType }}  
+                     <li><a href='../{{dir}}/index.html?skin={{querySkin}}'>{{nom}}(<span id="{{skinType}}">{{skinType}})</span></a><br/>
+                  {{else}}
+                     <li><a href='../{{dir}}/index.html?skin={{querySkin}}'>{{nom}}</a><br/>
+                  {{/if}} 
+             {{else}}
+                  <li><a href='../{{dir}}/index.html'>{{nom}}</a><br/>
+              {{/if}}             
+            {{#if description }}
+               <div> {{description}}
+                  {{#if sujets }}
+                     <div id="listName"><br/>Sujets: 
+                        {{#each sujets}}
+                            <span class="sujets"> {{this}} </span>
+                         {{/each}}
+                     </div>
+                  {{/if}}     
+              </div>   
+            {{/if}}     
     </li>
 {{/each}}
     </script>	
